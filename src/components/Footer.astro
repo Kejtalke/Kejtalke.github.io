@@ -1,0 +1,40 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-[#2F2C2A] py-12 text-white/60">
+  <div class="mx-auto max-w-5xl px-6">
+    <div class="flex flex-col items-center gap-6 text-center sm:flex-row sm:justify-between sm:text-left">
+      <div>
+        <p class="font-heading text-lg font-light text-white/80">
+          Strefa Zmian
+        </p>
+        <p class="mt-1 text-xs">
+          &copy; {year} Katarzyna Przybylska. Wszelkie prawa zastrzeżone.
+        </p>
+      </div>
+
+      <div class="flex items-center gap-6">
+        <a
+          href="https://www.facebook.com/strefazmianpoznan"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="transition-colors hover:text-white"
+          aria-label="Facebook"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+          </svg>
+        </a>
+        <a
+          href="https://booksy.com/pl-pl/328910_strefa-zmian_salon-kosmetyczny_15608_poznan#ba_s=seo"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-xs transition-colors hover:text-white"
+        >
+          Booksy
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
