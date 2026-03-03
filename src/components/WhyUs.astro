@@ -1,0 +1,61 @@
+---
+const reasons = [
+  {
+    title: 'Indywidualne podejście',
+    description:
+      'Każdy zabieg zaczynam od konsultacji. Dobieram technikę, kształt i kolor do Twoich potrzeb, stylu życia i preferencji.',
+  },
+  {
+    title: 'Sprawdzone materiały',
+    description:
+      'Pracuję wyłącznie na produktach renomowanych marek, które gwarantują trwałość, bezpieczeństwo i piękny efekt.',
+  },
+  {
+    title: 'Ciągły rozwój',
+    description:
+      'Regularnie uczestniczę w szkoleniach i kursach branżowych, aby oferować najnowsze techniki i trendy.',
+  },
+  {
+    title: 'Kameralna atmosfera',
+    description:
+      'Salon to przestrzeń stworzona z myślą o Twoim komforcie — spokojna, czysta i przyjazna. Tu możesz się odprężyć.',
+  },
+];
+---
+
+<section class="relative overflow-hidden bg-surface py-24 md:py-32">
+  <!-- Decorative background shape -->
+  <div class="pointer-events-none absolute -right-32 -top-32 h-64 w-64 rounded-full bg-accent-warm/[0.03] blur-3xl" aria-hidden="true"></div>
+  <div class="pointer-events-none absolute -bottom-32 -left-32 h-64 w-64 rounded-full bg-accent/[0.05] blur-3xl" aria-hidden="true"></div>
+
+  <div class="relative mx-auto max-w-5xl px-6">
+    <div class="fade-in text-center">
+      <p class="section-label">Dlaczego my</p>
+      <h2
+        class="mt-3 font-heading text-3xl font-light text-foreground md:text-4xl"
+      >
+        Dlaczego Strefa Zmian?
+      </h2>
+    </div>
+
+    <div class="fade-in-children mt-16 grid gap-10 sm:grid-cols-2">
+      {
+        reasons.map((reason, i) => (
+          <div class="group flex gap-5 text-left">
+            <span class="flex-shrink-0 font-heading text-4xl font-light leading-none text-accent-warm/25 transition-colors duration-300 group-hover:text-accent-warm/50">
+              {String(i + 1).padStart(2, '0')}
+            </span>
+            <div>
+              <h3 class="font-heading text-lg font-normal text-foreground md:text-xl">
+                {reason.title}
+              </h3>
+              <p class="mt-2 text-sm font-light leading-relaxed text-muted">
+                {reason.description}
+              </p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

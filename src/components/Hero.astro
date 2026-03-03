@@ -2,12 +2,28 @@
 
 ---
 
-<section class="relative flex min-h-dvh items-center justify-center bg-surface">
-  <div class="mx-auto max-w-2xl px-6 py-24 text-center">
+<section class="relative flex min-h-dvh items-center justify-center overflow-hidden bg-surface">
+  <!-- Warm radial glow -->
+  <div
+    class="pointer-events-none absolute inset-0"
+    aria-hidden="true"
+  >
+    <div class="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(139,125,107,0.08)_0%,transparent_70%)] md:h-[800px] md:w-[800px]"></div>
+  </div>
+
+  <!-- Decorative floating shapes -->
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <div class="absolute left-[10%] top-[20%] h-20 w-20 rounded-full border border-accent/20" style="animation: floatSlow 8s ease-in-out infinite;"></div>
+    <div class="absolute bottom-[25%] right-[12%] h-14 w-14 rotate-45 border border-accent-warm/15" style="animation: floatSlow 10s ease-in-out infinite 2s;"></div>
+    <div class="absolute bottom-[15%] left-[15%] h-1.5 w-1.5 rounded-full bg-accent-warm/30" style="animation: gentlePulse 4s ease-in-out infinite;"></div>
+    <div class="absolute right-[20%] top-[15%] h-2 w-2 rounded-full bg-accent/30" style="animation: gentlePulse 5s ease-in-out infinite 1s;"></div>
+  </div>
+
+  <div class="relative mx-auto max-w-2xl px-6 py-24 text-center">
     <img
       src="/logo.png"
       alt="Strefa Zmian - logo"
-      class="hero-animate hero-animate-1 mx-auto mb-10 w-[280px] md:w-[320px]"
+      class="hero-animate hero-animate-1 mx-auto mb-10 w-[280px] drop-shadow-sm md:w-[320px]"
     />
 
     <h1
@@ -16,19 +32,86 @@
       Strefa Zmian
     </h1>
 
+    <!-- Decorative line under heading -->
+    <div class="hero-animate hero-animate-3 mx-auto mt-5 flex items-center justify-center gap-3">
+      <span class="block h-px w-8 bg-gradient-to-r from-transparent to-accent"></span>
+      <span class="block h-1.5 w-1.5 rotate-45 bg-accent-warm"></span>
+      <span class="block h-px w-8 bg-gradient-to-l from-transparent to-accent"></span>
+    </div>
+
     <p
-      class="hero-animate hero-animate-3 mx-auto mt-4 max-w-md font-body text-lg font-light text-muted md:text-xl"
+      class="hero-animate mx-auto mt-5 max-w-md font-body text-lg font-light text-muted md:text-xl"
+      style="animation-delay: 0.5s;"
     >
       Stylizacja paznokci &middot; Rzęsy &middot; Brwi &middot; Pedicure
+    </p>
+
+    <p
+      class="hero-animate mx-auto mt-3 max-w-lg font-body text-sm font-light leading-relaxed text-muted"
+      style="animation-delay: 0.6s;"
+    >
+      Salon kosmetyczny na Grunwaldzie w Poznaniu. Zadbaj o siebie w&nbsp;kameralnej atmosferze pod okiem doświadczonego stylisty.
     </p>
 
     <a
       href="https://booksy.com/pl-pl/328910_strefa-zmian_salon-kosmetyczny_15608_poznan"
       target="_blank"
       rel="noopener noreferrer"
-      class="hero-animate hero-animate-4 mt-10 inline-block rounded-full bg-accent-warm px-10 py-3.5 text-sm font-medium tracking-wide text-white transition-opacity hover:opacity-90"
+      class="hero-animate btn-primary mt-10"
+      style="animation-delay: 0.8s;"
     >
       Umów wizytę
     </a>
+
+    <!-- Social links -->
+    <div class="hero-animate mt-8 flex items-center justify-center gap-5" style="animation-delay: 0.9s;">
+      <a
+        href="https://www.instagram.com/strefazmian.poznan/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-accent transition-colors hover:text-accent-warm"
+        aria-label="Instagram"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+        </svg>
+      </a>
+      <a
+        href="https://www.facebook.com/strefazmianpoznan"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-accent transition-colors hover:text-accent-warm"
+        aria-label="Facebook"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+        </svg>
+      </a>
+      <a
+        href="https://booksy.com/pl-pl/328910_strefa-zmian_salon-kosmetyczny_15608_poznan"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-accent transition-colors hover:text-accent-warm"
+        aria-label="Booksy"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
+          <path d="M8 7h6" />
+          <path d="M8 11h4" />
+        </svg>
+      </a>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="hero-animate mt-10" style="animation-delay: 1s;">
+      <a href="#uslugi" class="inline-flex flex-col items-center gap-2 text-accent transition-colors hover:text-accent-warm">
+        <span class="text-[0.65rem] font-medium uppercase tracking-[0.2em]">Poznaj ofertę</span>
+        <svg width="16" height="24" viewBox="0 0 16 24" fill="none" class="animate-bounce" style="animation-duration: 2s;">
+          <path d="M8 4v14m0 0l-5-5m5 5l5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
   </div>
 </section>

@@ -1,37 +1,42 @@
 ---
+const BOOKSY_URL = 'https://booksy.com/pl-pl/328910_strefa-zmian_salon-kosmetyczny_15608_poznan';
+
 const services = [
   {
     name: 'Stylizacja paznokci',
-    description: 'Manicure hybrydowy, przedłużanie żelem, zdobienia - trwałe i piękne paznokcie.',
-    price: 'od 100 zł',
+    description: 'Manicure hybrydowy, tytanowy, przedłużanie i uzupełnianie żelem oraz zdobienia artystyczne. Używam sprawdzonych produktów, które gwarantują trwałość do 3 tygodni. Każda stylizacja dobierana jest indywidualnie do kształtu płytki i Twoich preferencji.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><path d="M12 22c1-3 4-5 4-10a4 4 0 0 0-8 0c0 5 3 7 4 10z"/><path d="M10 12h4"/></svg>`,
   },
   {
     name: 'Stylizacja rzęs',
-    description: 'Przedłużanie rzęs metodą 1:1, objętościową i laminacja dla naturalnego efektu.',
-    price: 'od 140 zł',
+    description: 'Przedłużanie i uzupełnianie rzęs metodą 1:1 oraz objętościową (2D–6D) dla naturalnego lub wyrazistego efektu. Oferuję także lifting rzęs z koloryzacją, który podkręca i wzmacnia naturalne rzęsy. Zabieg dobrany do kształtu oka i oczekiwanego rezultatu.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>`,
   },
   {
     name: 'Stylizacja brwi',
-    description: 'Laminacja, henna pudrowa i regulacja - idealna oprawa oczu.',
-    price: 'od 40 zł',
+    description: 'Laminacja brwi, henna pudrowa, regulacja i depilacja woskiem — idealna oprawa oczu dopasowana do rysów Twojej twarzy. Efekt utrzymuje się nawet do 6 tygodni, a brwi wyglądają naturalnie i schludnie.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><path d="M3 8c3-3 7-3 9-1s6 0 9-3"/><path d="M3 16c3-3 7-3 9-1s6 0 9-3"/></svg>`,
   },
   {
     name: 'Pedicure',
-    description: 'Pedicure kosmetyczny z dbałością o każdy detal, zdrowe i zadbane stopy.',
-    price: 'od 60 zł',
+    description: 'Pedicure kosmetyczny i podologiczny z dbałością o każdy detal — pielęgnacja stóp, opracowanie paznokci i skórek oraz malowanie hybrydą. Zdrowe, zadbane stopy przez cały rok. Idealne rozwiązanie przed sezonem letnim lub jako regularna pielęgnacja.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><path d="M7 21h10"/><path d="M12 3v18"/><path d="M8 6c0-1 1-3 4-3s4 2 4 3-1 2-4 3-4 2-4 3 1 3 4 3 4-2 4-3"/></svg>`,
   },
 ];
 ---
 
-<section id="uslugi" class="bg-background py-24 md:py-32">
+<section id="uslugi" class="relative bg-background py-24 md:py-32">
   <div class="mx-auto max-w-5xl px-6">
     <div class="fade-in text-center">
       <p class="section-label">Usługi</p>
       <h2
         class="mt-3 font-heading text-3xl font-light text-foreground md:text-4xl"
       >
-        Czym się zajmuję
+        Usługi kosmetyczne w Strefie Zmian
       </h2>
+      <p class="mx-auto mt-4 max-w-xl text-sm font-light leading-relaxed text-muted">
+        Oferuję szeroki zakres zabiegów stylizacyjnych i pielęgnacyjnych. Sprawdź, co mogę dla Ciebie zrobić.
+      </p>
     </div>
 
     <div
@@ -39,16 +44,34 @@ const services = [
     >
       {
         services.map((service) => (
-          <div class="rounded-2xl border border-border bg-background p-8 transition-shadow hover:shadow-md">
+          <div class="service-card group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-background p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-accent-warm/5">
+            {/* Top accent line */}
+            <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent-warm/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+            <div class="mb-4 text-accent-warm/70">
+              <Fragment set:html={service.icon} />
+            </div>
+
             <h3 class="font-heading text-xl font-normal text-foreground md:text-2xl">
               {service.name}
             </h3>
-            <p class="mt-3 text-sm font-light leading-relaxed text-muted">
+            <p class="mt-3 flex-1 text-sm font-light leading-relaxed text-muted">
               {service.description}
             </p>
-            <p class="mt-4 text-sm font-medium text-accent-warm">
-              {service.price}
-            </p>
+
+            <div class="mt-5 border-t border-border pt-4">
+              <a
+                href={BOOKSY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-1.5 text-xs font-medium tracking-wide text-accent-warm transition-all duration-200 hover:gap-2.5"
+              >
+                Umów wizytę
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2.5 6h7M6.5 3l3 3-3 3"/>
+                </svg>
+              </a>
+            </div>
           </div>
         ))
       }

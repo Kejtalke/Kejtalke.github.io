@@ -2,19 +2,35 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import Services from '../components/Services.astro';
+import WhyUs from '../components/WhyUs.astro';
 import About from '../components/About.astro';
+import FAQ from '../components/FAQ.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
 ---
 
 <Layout
-  title="Strefa Zmian - Katarzyna Przybylska | Salon kosmetyczny Poznań"
-  description="Strefa Zmian - stylizacja paznokci, rzęs, brwi i pedicure w Poznaniu. Umów wizytę online przez Booksy."
+  title="Strefa Zmian Poznań Grunwald | Paznokcie, Rzęsy, Brwi, Pedicure"
+  description="Salon kosmetyczny w Poznaniu na Grunwaldzie. Stylizacja paznokci, przedłużanie rzęs, laminacja brwi i pedicure. Umów wizytę online."
 >
   <main>
     <Hero />
     <Services />
+    <!-- Ornament divider -->
+    <div class="bg-surface py-2">
+      <div class="ornament" aria-hidden="true">
+        <span class="ornament-diamond"></span>
+      </div>
+    </div>
+    <WhyUs />
     <About />
+    <FAQ />
+    <!-- Ornament divider -->
+    <div class="bg-background py-2">
+      <div class="ornament" aria-hidden="true">
+        <span class="ornament-diamond"></span>
+      </div>
+    </div>
     <Contact />
   </main>
   <Footer />
