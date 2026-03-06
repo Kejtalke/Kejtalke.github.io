@@ -19,13 +19,24 @@ const { title, description } = Astro.props;
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts (non-render-blocking) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Raleway:wght@300;400;500;600&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Raleway:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+
+    <!-- Preload LCP image -->
+    <link rel="preload" as="image" href="/logo.webp" type="image/webp" />
 
     <!-- Open Graph -->
     <meta property="og:title" content={title} />

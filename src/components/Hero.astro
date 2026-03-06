@@ -20,11 +20,17 @@
   </div>
 
   <div class="relative mx-auto max-w-2xl px-6 py-24 text-center">
-    <img
-      src="/logo.png"
-      alt="Strefa Zmian - logo"
-      class="hero-animate hero-animate-1 mx-auto mb-10 w-[280px] drop-shadow-sm md:w-[320px]"
-    />
+    <picture class="hero-animate hero-animate-1 mx-auto mb-10 block w-[280px] md:w-[320px]">
+      <source srcset="/logo.webp" type="image/webp" />
+      <img
+        src="/logo.png"
+        alt="Strefa Zmian - logo"
+        width="500"
+        height="500"
+        fetchpriority="high"
+        class="w-full drop-shadow-sm"
+      />
+    </picture>
 
     <h1
       class="hero-animate hero-animate-2 font-heading text-4xl font-light leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl"
@@ -41,14 +47,14 @@
 
     <p
       class="hero-animate mx-auto mt-5 max-w-md font-body text-lg font-light text-muted md:text-xl"
-      style="animation-delay: 0.5s;"
+      style="animation-delay: 0.2s;"
     >
       Stylizacja paznokci &middot; Rzęsy &middot; Brwi &middot; Pedicure
     </p>
 
     <p
       class="hero-animate mx-auto mt-3 max-w-lg font-body text-sm font-light leading-relaxed text-muted"
-      style="animation-delay: 0.6s;"
+      style="animation-delay: 0.25s;"
     >
       Salon kosmetyczny na Grunwaldzie w Poznaniu. Zadbaj o siebie w&nbsp;kameralnej atmosferze pod okiem doświadczonego stylisty.
     </p>
@@ -58,14 +64,14 @@
       target="_blank"
       rel="noopener noreferrer"
       class="hero-animate btn-primary mt-10"
-      style="animation-delay: 0.8s;"
+      style="animation-delay: 0.35s;"
     >
       Umów wizytę
       <span class="sr-only">(otwiera nową kartę)</span>
     </a>
 
     <!-- Social links -->
-    <div class="hero-animate mt-8 flex items-center justify-center gap-5" style="animation-delay: 0.9s;">
+    <div class="hero-animate mt-8 flex items-center justify-center gap-5" style="animation-delay: 0.4s;">
       <a
         href="https://www.instagram.com/strefazmian.poznan/"
         target="_blank"
@@ -106,7 +112,7 @@
     </div>
 
     <!-- Scroll indicator -->
-    <div class="hero-animate mt-10" style="animation-delay: 1s;">
+    <div class="hero-animate mt-10" style="animation-delay: 0.45s;">
       <a href="#uslugi" class="inline-flex flex-col items-center gap-2 text-accent transition-colors hover:text-accent-warm">
         <span class="text-[0.65rem] font-medium uppercase tracking-[0.2em]">Poznaj ofertę</span>
         <svg width="16" height="24" viewBox="0 0 16 24" fill="none" class="animate-bounce" style="animation-duration: 2s;">
