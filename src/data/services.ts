@@ -4,7 +4,7 @@ export const services = [
   {
     name: 'Stylizacja rzęs',
     slug: 'rzesy',
-    description: 'Przedłużanie i uzupełnianie rzęs metodą 1:1 oraz objętościową (2D-6D) dla naturalnego lub wyrazistego efektu. Oferuję także lifting rzęs z koloryzacją, który podkręca i wzmacnia naturalne rzęsy.',
+    description: 'Przedłużanie i uzupełnianie rzęs metodą 1:1 oraz objętościową (od 2D do mega volume) dla naturalnego lub wyrazistego efektu. Oferuję także lifting rzęs, który daje trwały efekt podkręcenia i wydłużenia rzęs.',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>`,
     image: '/images/portfolio-lashes.jpg',
     details: {
