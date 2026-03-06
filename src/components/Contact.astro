@@ -67,7 +67,7 @@ try {
     hours = parsed;
   }
 } catch {
-  // Fetch failed — use fallback hours
+  // Fetch failed - use fallback hours
 }
 ---
 
@@ -82,7 +82,7 @@ try {
       </h2>
 
       <p class="mx-auto mt-4 max-w-md text-sm font-light leading-relaxed text-muted">
-        Chcesz zadbać o swoje paznokcie, rzęsy lub brwi? Zarezerwuj wygodny termin online — szybko i bez dzwonienia.
+        Chcesz zadbać o swoje paznokcie, rzęsy lub brwi? Zarezerwuj wygodny termin online - szybko i bez dzwonienia.
       </p>
 
       <a
@@ -92,6 +92,7 @@ try {
         class="btn-primary mt-8"
       >
         Rezerwuj przez Booksy
+        <span class="sr-only">(otwiera nową kartę)</span>
       </a>
     </div>
 
@@ -145,13 +146,19 @@ try {
           Godziny otwarcia
         </h3>
         <table class="mt-3 w-full text-left">
+          <thead class="sr-only">
+            <tr>
+              <th scope="col">Dzień tygodnia</th>
+              <th scope="col">Godziny</th>
+            </tr>
+          </thead>
           <tbody>
             {
               hours.map((row) => (
                 <tr class="border-b border-border last:border-0">
-                  <td class="py-2.5 text-sm font-light text-foreground">
+                  <th scope="row" class="py-2.5 text-sm font-light font-normal text-foreground">
                     {row.day}
-                  </td>
+                  </th>
                   <td class="py-2.5 text-right text-sm font-light text-muted">
                     {row.time}
                   </td>

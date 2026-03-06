@@ -1,28 +1,5 @@
 ---
-const BOOKSY_URL = 'https://booksy.com/pl-pl/328910_strefa-zmian_salon-kosmetyczny_15608_poznan';
-
-const services = [
-  {
-    name: 'Stylizacja paznokci',
-    description: 'Manicure hybrydowy, tytanowy, przedłużanie i uzupełnianie żelem oraz zdobienia artystyczne. Używam sprawdzonych produktów, które gwarantują trwałość do 3 tygodni. Każda stylizacja dobierana jest indywidualnie do kształtu płytki i Twoich preferencji.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><path d="M12 22c1-3 4-5 4-10a4 4 0 0 0-8 0c0 5 3 7 4 10z"/><path d="M10 12h4"/></svg>`,
-  },
-  {
-    name: 'Stylizacja rzęs',
-    description: 'Przedłużanie i uzupełnianie rzęs metodą 1:1 oraz objętościową (2D–6D) dla naturalnego lub wyrazistego efektu. Oferuję także lifting rzęs z koloryzacją, który podkręca i wzmacnia naturalne rzęsy. Zabieg dobrany do kształtu oka i oczekiwanego rezultatu.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>`,
-  },
-  {
-    name: 'Stylizacja brwi',
-    description: 'Laminacja brwi, henna pudrowa, regulacja i depilacja woskiem — idealna oprawa oczu dopasowana do rysów Twojej twarzy. Efekt utrzymuje się nawet do 6 tygodni, a brwi wyglądają naturalnie i schludnie.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><path d="M3 8c3-3 7-3 9-1s6 0 9-3"/><path d="M3 16c3-3 7-3 9-1s6 0 9-3"/></svg>`,
-  },
-  {
-    name: 'Pedicure',
-    description: 'Pedicure kosmetyczny i podologiczny z dbałością o każdy detal — pielęgnacja stóp, opracowanie paznokci i skórek oraz malowanie hybrydą. Zdrowe, zadbane stopy przez cały rok. Idealne rozwiązanie przed sezonem letnim lub jako regularna pielęgnacja.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><path d="M7 21h10"/><path d="M12 3v18"/><path d="M8 6c0-1 1-3 4-3s4 2 4 3-1 2-4 3-4 2-4 3 1 3 4 3 4-2 4-3"/></svg>`,
-  },
-];
+import { services, BOOKSY_URL } from '../data/services';
 ---
 
 <section id="uslugi" class="relative bg-background py-24 md:py-32">
@@ -59,7 +36,28 @@ const services = [
               {service.description}
             </p>
 
-            <div class="mt-5 border-t border-border pt-4">
+            {service.image && (
+              <div class="mt-4 overflow-hidden rounded-xl">
+                <img
+                  src={service.image}
+                  alt={service.name}
+                  loading="lazy"
+                  class="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+            )}
+
+            <div class="mt-5 flex items-center gap-4 border-t border-border pt-4">
+              <a
+                href={`/uslugi#${service.slug}`}
+                class="flex items-center gap-1.5 text-xs font-medium tracking-wide text-muted transition-all duration-200 hover:gap-2.5 hover:text-foreground"
+              >
+                Szczegóły zabiegu
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M2.5 6h7M6.5 3l3 3-3 3"/>
+                </svg>
+              </a>
+              <span class="text-border" aria-hidden="true">|</span>
               <a
                 href={BOOKSY_URL}
                 target="_blank"
@@ -67,7 +65,8 @@ const services = [
                 class="flex items-center gap-1.5 text-xs font-medium tracking-wide text-accent-warm transition-all duration-200 hover:gap-2.5"
               >
                 Umów wizytę
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <span class="sr-only">(otwiera nową kartę)</span>
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M2.5 6h7M6.5 3l3 3-3 3"/>
                 </svg>
               </a>

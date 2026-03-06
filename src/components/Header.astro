@@ -1,0 +1,116 @@
+---
+const BOOKSY_URL = 'https://booksy.com/pl-pl/328910_strefa-zmian_salon-kosmetyczny_15608_poznan';
+
+const navLinks = [
+  { label: 'Usługi', href: '/uslugi' },
+  { label: 'Pierwsza wizyta', href: '/przygotowanie' },
+];
+---
+
+<header class="site-header fixed inset-x-0 top-0 z-50">
+  <div class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+    <!-- Brand -->
+    <a href="/" class="font-heading text-lg font-light text-foreground transition-colors hover:text-accent-warm">
+      Strefa Zmian
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden items-center gap-6 md:flex">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class="text-sm font-light text-muted transition-colors hover:text-foreground"
+        >
+          {link.label}
+        </a>
+      ))}
+      <a
+        href={BOOKSY_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="rounded-full bg-accent-warm px-5 py-2 text-xs font-medium tracking-wide text-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+      >
+        Umów wizytę
+        <span class="sr-only">(otwiera nową kartę)</span>
+      </a>
+    </nav>
+
+    <!-- Mobile hamburger -->
+    <button
+      id="mobile-menu-btn"
+      class="flex h-9 w-9 items-center justify-center rounded-lg text-muted transition-colors hover:text-foreground md:hidden"
+      aria-label="Menu nawigacji"
+      aria-expanded="false"
+    >
+      <svg id="menu-icon-open" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        <path d="M4 7h16M4 12h16M4 17h16"/>
+      </svg>
+      <svg id="menu-icon-close" class="hidden" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        <path d="M6 6l12 12M6 18L18 6"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <nav id="mobile-menu" class="hidden border-t border-border/60 bg-background/95 backdrop-blur-md md:hidden">
+    <div class="mx-auto max-w-5xl space-y-1 px-6 py-4">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class="mobile-nav-link block rounded-lg px-3 py-2.5 text-sm font-light text-muted transition-colors hover:bg-surface hover:text-foreground"
+        >
+          {link.label}
+        </a>
+      ))}
+      <div class="pt-2">
+        <a
+          href={BOOKSY_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block rounded-full bg-accent-warm px-5 py-2.5 text-center text-xs font-medium tracking-wide text-white shadow-sm transition-all duration-200 hover:shadow-md"
+        >
+          Umów wizytę
+          <span class="sr-only">(otwiera nową kartę)</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const header = document.querySelector('.site-header') as HTMLElement;
+  const menuBtn = document.getElementById('mobile-menu-btn')!;
+  const mobileMenu = document.getElementById('mobile-menu')!;
+  const iconOpen = document.getElementById('menu-icon-open')!;
+  const iconClose = document.getElementById('menu-icon-close')!;
+
+  // Scroll effect
+  function updateHeader() {
+    if (window.scrollY > 50) {
+      header.classList.add('header-scrolled');
+    } else {
+      header.classList.remove('header-scrolled');
+    }
+  }
+  window.addEventListener('scroll', updateHeader, { passive: true });
+  updateHeader();
+
+  // Mobile menu toggle
+  menuBtn.addEventListener('click', () => {
+    const isOpen = !mobileMenu.classList.contains('hidden');
+    mobileMenu.classList.toggle('hidden');
+    iconOpen.classList.toggle('hidden');
+    iconClose.classList.toggle('hidden');
+    menuBtn.setAttribute('aria-expanded', String(!isOpen));
+  });
+
+  // Close mobile menu on link click
+  mobileMenu.querySelectorAll('.mobile-nav-link').forEach((link) => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      iconOpen.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>

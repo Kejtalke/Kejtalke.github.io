@@ -1,4 +1,6 @@
 ---
+import Header from '../components/Header.astro';
+
 interface Props {
   title: string;
   description: string;
@@ -33,7 +35,9 @@ const { title, description } = Astro.props;
     <meta property="og:url" content="https://strefazmian-poznan.pl/" />
     <meta property="og:site_name" content="Strefa Zmian - Salon kosmetyczny Poznań" />
   </head>
-  <body>
+  <body class="no-js">
+    <a href="#main-content" class="skip-link">Przejdź do treści</a>
+    <Header />
     <slot />
 
     <script>
@@ -48,6 +52,8 @@ const { title, description } = Astro.props;
         },
         { threshold: 0.15 }
       );
+
+      document.body.classList.remove('no-js');
 
       document.querySelectorAll('.fade-in, .fade-in-children').forEach((el) => {
         observer.observe(el);

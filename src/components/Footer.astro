@@ -12,7 +12,12 @@ const year = new Date().getFullYear();
         <p class="font-heading text-lg font-light text-white/80">
           Strefa Zmian
         </p>
-        <p class="mt-1 text-xs">
+        <nav aria-label="Stopka" class="mt-2 flex items-center justify-center gap-3 text-xs sm:justify-start">
+          <a href="/uslugi" class="transition-colors hover:text-white">Usługi</a>
+          <span class="text-white/30" aria-hidden="true">|</span>
+          <a href="/przygotowanie" class="transition-colors hover:text-white">Pierwsza wizyta</a>
+        </nav>
+        <p class="mt-2 text-xs">
           &copy; {year} Katarzyna Przybylska. Wszelkie prawa zastrzeżone.
         </p>
       </div>

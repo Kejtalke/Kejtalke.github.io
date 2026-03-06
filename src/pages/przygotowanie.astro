@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+import { preparations } from '../data/preparations';
+---
+
+<Layout
+  title="Pierwsza wizyta - Strefa Zmian Poznań"
+  description="Jak przygotować się do wizyty w Strefie Zmian? Wskazówki dotyczące rzęs, brwi, paznokci i pedicure."
+>
+  <main id="main-content">
+    <section class="bg-background pb-8 pt-28 md:pt-32">
+      <div class="mx-auto max-w-5xl px-6">
+        <div class="fade-in text-center">
+          <p class="section-label">Pierwsza wizyta</p>
+          <h1 class="mt-3 font-heading text-3xl font-light text-foreground md:text-4xl">
+            Jak przygotować się do wizyty?
+          </h1>
+          <p class="mx-auto mt-4 max-w-xl text-sm font-light leading-relaxed text-muted">
+            Pracuję w systemie indywidualnym - w czasie Twojej wizyty skupiam się wyłącznie na Tobie. Poniżej kilka wskazówek, dzięki którym zabieg będzie jeszcze bardziej komfortowy i&nbsp;efektywny.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-background py-16">
+      <div class="mx-auto max-w-5xl px-6">
+        <div class="fade-in-children grid gap-6 sm:grid-cols-2">
+          {
+            preparations.map((prep) => (
+              <div class="rounded-2xl border border-border bg-background p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-accent-warm/5">
+                <div class="mb-4 text-accent-warm/70">
+                  <Fragment set:html={prep.icon} />
+                </div>
+                <h2 class="font-heading text-xl font-normal text-foreground md:text-2xl">
+                  {prep.name}
+                </h2>
+                <ul class="mt-4 space-y-3">
+                  {prep.tips.map((tip: string) => (
+                    <li class="flex items-start gap-3 text-sm font-light leading-relaxed text-muted">
+                      <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-accent-warm/60" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M3 8l3.5 3.5L13 5" />
+                      </svg>
+                      {tip}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))
+          }
+        </div>
+
+        <div class="fade-in mt-12 rounded-2xl border border-border/60 bg-surface/30 p-6 text-center">
+          <p class="text-sm font-light leading-relaxed text-muted">
+            Jeśli masz jakiekolwiek choroby przewlekłe, alergie lub wątpliwości - poinformuj mnie o tym przed zabiegiem. Twoje bezpieczeństwo jest dla mnie priorytetem.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

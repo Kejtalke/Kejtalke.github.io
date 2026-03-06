@@ -13,7 +13,7 @@ import Footer from '../components/Footer.astro';
   title="Strefa Zmian Poznań Grunwald | Paznokcie, Rzęsy, Brwi, Pedicure"
   description="Salon kosmetyczny w Poznaniu na Grunwaldzie. Stylizacja paznokci, przedłużanie rzęs, laminacja brwi i pedicure. Umów wizytę online."
 >
-  <main>
+  <main id="main-content">
     <Hero />
     <Services />
     <!-- Ornament divider -->
@@ -24,6 +24,31 @@ import Footer from '../components/Footer.astro';
     </div>
     <WhyUs />
     <About />
+
+    <!-- First visit CTA -->
+    <section id="pierwsza-wizyta" class="bg-background py-24 md:py-32">
+      <div class="mx-auto max-w-3xl px-6">
+        <div class="fade-in text-center">
+          <p class="section-label">Pierwsza wizyta</p>
+          <h2 class="mt-3 font-heading text-3xl font-light text-foreground md:text-4xl">
+            Jak przygotować się do wizyty?
+          </h2>
+          <p class="mx-auto mt-4 max-w-xl text-sm font-light leading-relaxed text-muted">
+            Kilka prostych wskazówek, dzięki którym Twój zabieg będzie jeszcze bardziej komfortowy i&nbsp;efektywny.
+          </p>
+          <a
+            href="/przygotowanie"
+            class="mt-8 inline-flex items-center gap-2 text-sm font-medium tracking-wide text-accent-warm transition-all duration-200 hover:gap-3"
+          >
+            Sprawdź wskazówki
+            <svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2.5 6h7M6.5 3l3 3-3 3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <FAQ />
     <!-- Ornament divider -->
     <div class="bg-background py-2">
