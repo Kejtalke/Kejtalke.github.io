@@ -54,7 +54,7 @@ import { services, BOOKSY_URL } from '../data/services';
 
               {/* Treatments */}
               <div class="mt-8">
-                <p class="mb-4 text-xs font-medium uppercase tracking-wider text-accent-warm/80">Zabiegi</p>
+                <p class="mb-4 text-xs font-medium uppercase tracking-wider text-accent-warm">Zabiegi</p>
                 <div class="space-y-4">
                   {service.details.treatments.map((t: { name: string; description: string }) => (
                     <div class="rounded-xl border border-border/60 bg-surface/30 p-5">
@@ -67,10 +67,10 @@ import { services, BOOKSY_URL } from '../data/services';
 
               {/* Contraindications */}
               <div class="mt-8">
-                <p class="mb-3 text-xs font-medium uppercase tracking-wider text-accent-warm/80">Przeciwwskazania</p>
+                <p class="mb-3 text-xs font-medium uppercase tracking-wider text-accent-warm">Przeciwwskazania</p>
                 <ul class="space-y-2">
                   {service.details.contraindications.map((c: string) => (
-                    <li class="flex items-start gap-2 text-sm font-light text-muted/80">
+                    <li class="flex items-start gap-2 text-sm font-light text-muted">
                       <svg class="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-accent-warm/40" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                         <circle cx="8" cy="8" r="7" />
                         <path d="M10 6L6 10M6 6l4 4" />
