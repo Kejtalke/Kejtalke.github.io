@@ -35,7 +35,7 @@ export const services = [
   {
     name: 'Stylizacja paznokci',
     slug: 'paznokcie',
-    description: 'Manicure hybrydowy, żelowy, tytanowy oraz zdobienia artystyczne. Używam sprawdzonych produktów, które gwarantują trwałość do 3 tygodni. Każda stylizacja dobierana jest indywidualnie do kształtu płytki i Twoich preferencji.',
+    description: 'Manicure hybrydowy, żelowy, tytanowy. Używam sprawdzonych produktów, które gwarantują trwałość do 3 tygodni. Każda stylizacja dobierana jest indywidualnie do kształtu płytki i Twoich preferencji.',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><path d="M12 22c1-3 4-5 4-10a4 4 0 0 0-8 0c0 5 3 7 4 10z"/><path d="M10 12h4"/></svg>`,
     image: '/images/portfolio-nails.jpg',
     details: {
