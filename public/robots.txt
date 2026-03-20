@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://strefazmian-poznan.pl/sitemap-index.xml
